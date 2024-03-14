@@ -125,11 +125,23 @@
             <input type="submit" value="Register">
         </form>
 
-        <a href="javascript:void(0)" onclick="history.pushState(null, 'test', 'spa/1.html')" id="historyPush">SPA URL</a>
+        <a href="#" id="historyPush">SPA URL</a>
     </div>
 
     <footer>
         <p>&copy; 2024 Registration Form</p>
     </footer>
+
+    <script>
+        // JavaScript code to update URL on clicking anchor tag
+        let clickCount = 0;
+        const anchorTag = document.getElementById('historyPush');
+
+        anchorTag.addEventListener('click', function(e) {
+            e.preventDefault();
+            clickCount++;
+            history.pushState(null, 'test', 'spa/' + clickCount + '.html');
+        });
+    </script>
 </body>
 </html>
